@@ -1,0 +1,146 @@
+* { 
+    margin: 0;
+    padding: 0;
+}
+
+#first {
+    height: 100vh;
+    background: linear-gradient(rgba(2, 4, 7, 0.9), rgba(92, 106, 151, 0.9)), url("/img/dice.png");
+    background-size: cover;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Change this to flex-start to align items at the top */
+    padding-top: 50px; /* Adjust this value to move the content down */
+}
+
+img {
+    height: 62px;
+    margin-bottom: 10px; /* Space below the image */
+}
+
+h1 {
+    font-family: "Dela Gothic One";
+    color: rgb(240, 224, 207);
+    font-size: 130%;
+    margin-bottom: 40px; /* Space below the logo */
+}
+
+.center {
+    position: absolute; /* Use absolute positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust positioning */
+    display: flex;
+    justify-content: center; /* Center the card horizontally */
+    align-items: center; /* Center the card vertically */
+}
+
+.card{
+    background-color: rgba(13, 27, 71, 0.3);
+    margin-top: 0; /* Remove top margin */
+}
+
+.card-header {
+    height: 1.5cm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 150%;
+    font-family: "Dela Gothic One";
+    color: rgb(240, 224, 207);
+}
+
+.list-group-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.6cm;
+    background-color: rgba(109, 129, 170, 0.7);
+    font-size: 150%;
+    font-family: "Dela Gothic One";
+    color: rgb(240, 224, 207);
+}
+
+.list-group-item:hover {
+    box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.5);
+}
+
+.list-group-item a {
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+.btn {
+    background-color: rgba(92, 106, 151, 0.6);
+    border: none; /* Remove the default border */
+    display: block; /* Ensure it takes full width available */
+    margin: 0 auto; /* Center the button */
+}
+
+.noms {
+    margin-top: 10px; /* Adjust this value as needed */
+    margin-bottom: 10px; /* Réduit l'espace en dessous de la phrase */
+    font-size: 150%; /* Increased font size for the phrase */
+}
+
+.btn{
+    margin-top: 15px; /* Increased margin for the button to move it closer to inputs */
+}
+
+.img-dice {
+    position: absolute; /* Permet de positionner l'image dans la carte */
+    top: -25px; /* Ajustez cette valeur pour positionner verticalement */
+    left: 0px; /* Ajustez cette valeur pour positionner horizontalement */
+    height: 60px; /* Ajustez la taille de l'image si nécessaire */
+}
+
+#jumpAnimation {
+    font-size: 24px;
+    color: #dc3545;
+}
+
+#gameArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .center {
+        top: 60%;
+    }
+}
+
+.dice {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    background-color: #26507d;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3), inset 0px 2px 4px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.dice:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3), inset 0px 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+.card-img-top {
+    height: 300px; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image covers the space while maintaining aspect ratio */
+}
+
+
+
