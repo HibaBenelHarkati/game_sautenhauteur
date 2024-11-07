@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiceGame - Home</title>
+</head>
+
+<body>
+    <div id="first">
+        <img src="img/probability.png" class="img">
+        <h1 class="logo">DiceGame</h1>
+    </div>
+        
+    <div class="center">
+        <img src="img/dice2.png" class="img-dice">
+        <div class="card" style="width: 90%; margin: auto; margin-top: 20px;">
+            <div class="card-body">
+                <h1 class="noms text-center">Enter Your Names</h1>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-2">
+                            <label for="formGroupExampleInput1" class="form-label"></label>
+                            <input type="text" class="form-control" id="formGroupExampleInput1" placeholder="1st player" required>
+                        </div>
+                        <div class="mb-2">
+                            <label for="formGroupExampleInput3" class="form-label"></label>
+                            <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="3rd player" required>
+                        </div> 
+                    </div>
+                    <div class="col">
+                        <div class="mb-2">
+                            <label for="formGroupExampleInput2" class="form-label"></label>
+                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="2nd player" required>
+                        </div> 
+                        <div class="mb-2">
+                            <label for="formGroupExampleInput4" class="form-label"></label>
+                            <input type="text" class="form-control" id="formGroupExampleInput4" placeholder="4th player" required>
+                        </div> 
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="submitnames()">Submit Names</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitnames(){
+            let noms = [
+                document.getElementById("formGroupExampleInput1").value,
+                document.getElementById("formGroupExampleInput2").value,
+                document.getElementById("formGroupExampleInput3").value,
+                document.getElementById("formGroupExampleInput4").value
+            ];
+    
+            if (noms.some(name => name === "")) {
+                alert("Please enter names for all players.");
+                return;
+            }
+
+            noms.forEach((name, index) => {
+                localStorage.setItem(`player${index + 1}`, name);   
+            });
+            window.location.href = "startGame.html";
+        }
+
+    </script>
+
+</body>
+</html>
