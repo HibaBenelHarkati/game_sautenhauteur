@@ -21,7 +21,7 @@
         <div class="card" style="width: 90%; margin: auto; margin-top: 20px;">
             <div class="card-body text-center">
                 <h1 class="noms text-center">Players Ranking</h1>
-                <div id="rankingTable"></div> <!-- Container for the Tabulator table -->
+                <div id="rankingTable"></div> 
                 <button class="btn btn-primary mt-3" onclick="window.location.href='index.html'">Play Again</button>
             </div>
         </div>
@@ -35,38 +35,34 @@
             { name: localStorage.getItem("player4"), score: parseInt(localStorage.getItem("score_" + localStorage.getItem("player4"))) || 0 }
         ];
 
-        // Sort players by score in descending order
         players.sort((a, b) => b.score - a.score);
 
-        // Add rank to players array
         let currentRank = 1;
         let previousScore = null;
 
         players.forEach((player, index) => {
             if (player.score === previousScore) {
-                // If the score is the same as the previous player, keep the same rank
+
                 player.rank = currentRank;
             } else {
-                // Update rank to the next position
-                currentRank = index + 1; // rank is index + 1 due to 0-based index
+                
+                currentRank = index + 1;
                 player.rank = currentRank;
             }
-            previousScore = player.score; // Store current score for next comparison
+            previousScore = player.score; 
         });
 
-        // Tabulator table setup
         var table = new Tabulator("#rankingTable", {
-            data: players, // Set data
-            layout: "fitColumns", // Fit columns to width of table
-            columns: [ // Define the table columns
+            data: players, 
+            layout: "fitColumns", 
+            columns: [ 
                 { title: "Rank", field: "rank", width: 100 },
                 { title: "Name", field: "name", width: 200 },
                 { title: "Height Achieved", field: "score", width: 150 }
             ],
-            pagination: "local", // Enable local pagination
-            paginationSize: 5, // Number of rows per page
-            movableColumns: true, // Allow column moving
-        });
+            pagination: "local", 
+            paginationSize: 5,
+            movableColumns: true, });
     </script>
 </body>
 </html>
